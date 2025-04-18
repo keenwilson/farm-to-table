@@ -1,7 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'standalone',
-  // ... any other configurations you have
+  images: {
+    unoptimized: true,
+  }
 }
 
 module.exports = nextConfig
