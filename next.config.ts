@@ -11,6 +11,11 @@ const nextConfig = {
       },
     ],
   },
+  experimental: {
+    outputFileTracingIncludes: {
+      '/**': ['./public/**/*']
+    }
+  }
 }
 
 module.exports = nextConfig
