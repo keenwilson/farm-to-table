@@ -11,12 +11,14 @@ frontend:
   artifacts:
     baseDirectory: /
     files:
-      - .next/**/*
-      - public/**/*
-      - node_modules/**/*
-      - package.json
-      - next.config.js
-      - standalone/**/*
+      - '**/*'
+      - ../node_modules/**/*
+      - ../package.json
+      - ../public/**/*
+      - ../next.config.js
+      - ../standalone/**/*
+      - ../server.js
+      - ../.next/required-server-files.json
     discard-paths: no
   cache:
     paths:
