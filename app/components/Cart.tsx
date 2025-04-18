@@ -1,7 +1,20 @@
 "use client";
 import { useState } from 'react';
 
-export default function Cart({ items }) {
+export interface CartItem {
+  id: string | number;
+  name: string;
+  price: number;
+  quantity: number;
+  // Add other properties
+}
+
+export interface CartProps {
+  items: CartItem[];
+}
+
+
+export default function Cart({ items }: CartProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);

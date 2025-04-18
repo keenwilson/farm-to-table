@@ -1,15 +1,10 @@
 "use client";
 import Image from 'next/image';
+import { Product } from '@/app/utils/data';
 
 interface ProductCardProps {
-  product: {
-    id: number;
-    name: string;
-    price: number;
-    description: string;
-    image: string;
-  };
-  onAddToCart: (product: any) => void;
+  product: Product;
+  onAddToCart: (product: Product) => void;
 }
 
 export default function ProductCard({ product, onAddToCart }: ProductCardProps) {

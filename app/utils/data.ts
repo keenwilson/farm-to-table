@@ -1,4 +1,14 @@
-export const products = [
+// Define the Product type
+export interface Product {
+  id: number;
+  name: string;
+  price: number;
+  description: string;
+  image: string;
+}
+
+// Export the products array with the Product type
+export const products: Product[] = [
   {
     id: 1,
     name: "Farm Fresh Eggs - Dozen",

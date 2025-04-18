@@ -1,13 +1,15 @@
 "use client";
-import { useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Cart from "./Cart";
 import ProductList from "./ProductList";
+import { Product } from '@/app/utils/data';
+import { CartItem } from './Cart';
 
-export default function CartProvider() {
-  const [cartItems, setCartItems] = useState([]);
+export default function CartProvider() {  // Remove children prop
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
-  const addToCart = (product) => {
+  const addToCart = (product: Product) => {
     setCartItems((prevItems) => {
       const existingItem = prevItems.find((item) => item.id === product.id);
       if (existingItem) {
@@ -43,7 +45,7 @@ export default function CartProvider() {
           priority
         />
         <h2 className="text-xl mb-4">Our Farm-Fresh Products</h2>
-        <ProductList addToCart={addToCart} />
+        <ProductList addToCart={addToCart} /> {/* Pass addToCart prop here */}
       </main>
     </div>
   );
