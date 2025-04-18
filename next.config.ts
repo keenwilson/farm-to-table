@@ -3,7 +3,14 @@ const nextConfig = {
   output: 'standalone',
   images: {
     unoptimized: true,
-  }
+    domains: ['main.d3iu0xoznse3pk.amplifyapp.com'], // Add your Amplify domain
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+    ],
+  },
 }
 
 module.exports = nextConfig
