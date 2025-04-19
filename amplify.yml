@@ -9,17 +9,17 @@ frontend:
         - npm run build
         - ls -la public/images/
   artifacts:
-    baseDirectory: /
+    baseDirectory: .next
     files:
       - '**/*'
-      - ../node_modules/**/*
       - ../package.json
       - ../public/**/*
+      - ../node_modules/**/*
       - ../next.config.js
-      - ../standalone/**/*
-      - ../server.js
-      - ../.next/required-server-files.json
-    discard-paths: no
+      - required-server-files.json
+      - standalone/**/*
+      - static/**/*
+      - server/**/*
   cache:
     paths:
       - .next/cache/**/*
